@@ -101,3 +101,30 @@ is.nan(x) #[1] FALSE FALSE  TRUE FALSE FALSE
 ## column lengths should be same
 
 ## to create data Frames, read.table() and read.csv(), can be converted into matrix.
+
+x <-data.frame(day = 1:4, rain = c (T,T,F,F))
+x
+row.names(x) <- c("a","b","c","d") ## add row names
+x
+
+ncol(x) # gives count of columns.
+
+nrow(x) # gives count of rows.
+
+x <- 1:3
+x
+
+names (x) # giving names to columns of vectors
+
+
+names (x) <- c("Col_A","Col_B","Col_C")
+x
+
+names (x)
+
+
+x <- list (a=1, b=2, c=3)
+x
+
+x <- list(a =1:5, b = "ID", c =c("First Name", "Last Name"))
+x
