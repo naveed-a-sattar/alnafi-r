@@ -127,4 +127,120 @@ x <- list (a=1, b=2, c=3)
 x
 
 x <- list(a =1:5, b = "ID", c =c("First Name", "Last Name"))
+x # displays all 3 lists
+x$a ## diplays only a list.
+
+#name the rows and columns of matrix
+
+m<- matrix(1:4, nrow = 2, ncol =2)
+dimname(m) # as dimnames were not assigned so the error is being out
+#now lets give dimnames and check again out put
+
+dimnames (m) <- list (c("r1","r2"),c("c1","c2"))
+m
+# now the row and column names are there.
+
+# getting help in R.
+
+## click on help button
+
+#Google is your friend, and Stack over flow. Google is your Friend
+# if you find a soultion, you can post on stack over flow to help community
+
+#sub setting
+
+# 
+x <- c("a", "b", "c", "C", "d","a")
 x
+x[1]
+x[2]
+x[1:4]
+u <-x > "a"
+u
+x[u]
+x[x>"a"] # instead of U directly pass logic in []
+
+##subsetting in Matrix
+
+x <- matrix(1:6, 2 ,3)
+x
+x[1,2]
+#indices can also missing
+x [1,]
+x[,2] # result is shown in vector form, but we want output in form of matrix
+
+# to get data in form of matrix only.
+
+x[1,2, drop = FALSE]
+
+x[1,, drop = FALSE]
+
+#sub setting list
+
+x <- list (weekday = 1:4, rain_prob = 0.6)
+x[1] ## the x list contains 1st list as weekdays
+
+x[[1]] ## it would result only list without name
+#another and most commonly used method is
+
+x$rain_prob
+
+x["rain_prob"] ## adding square brackets may result in data without list names
+x["weekday"]
+x[["weekday"]]
+x[["rain_prob"]]
+
+x <- list (weekday = 1:4, rain_prob = 0.6, item = "umbrella")
+x[c(1,3)]
+x[c(3,1)]
+
+
+#assign a variable with list name
+name <- "weekday"
+
+x[[name]]
+
+x$name # this will not give result as name is not a direct list name in x list so it will not give output.
+
+x$weekday ## will give result
+
+## nested elements of a list.
+
+x <- list(a=list(10,12,14),b = c(3.14,2.81))
+x[[c(1,3)]] ## by apply 2 square brackets, 1st bracket will go inside x then 2nd bracket go inside a and get its 3rd value
+
+x[[1]][[3]] ## another way
+
+x[[c(2,1)]]
+
+## removing Null / NA valuesx ,
+
+x <- c(1,2,NA,4,NA,5)
+
+bad <- is.na(x)
+bad
+## inverse bad as
+!bad
+#get values like
+x[!bad]
+x
+# another way
+
+x <- c(1,2,NA,4,NA,5)
+y <- c("a","b",NA,"d",NA,"f")
+
+good <- complete.cases(x,y)
+good
+x[good]
+y[good]
+
+## R have some its own data sets for example
+airquality
+View(airquality) ## it shows some data have NA values, lets remove them.
+
+airquality[1:6,] # it gives 6 rows data only
+good <- complete.cases(airquality) ## create good to remove NAs
+airquality[good,][1:6,] ## shows, there are no NAs
+
+
+
