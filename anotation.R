@@ -243,4 +243,120 @@ good <- complete.cases(airquality) ## create good to remove NAs
 airquality[good,][1:6,] ## shows, there are no NAs
 
 
+### Control Structures, IF ELSE
+#if, else testing a condition
+# for: executes a loop a fixed number of times
+# while: execute a loop while a condition is true
+# repeat : execute an infinite loop
+# break: break the execution of a loop
+# next: skip an iteration of a loop
+# return: exist a function
 
+x = 5
+a = FALSE
+if(x>3){ 
+  a = TRUE
+}else { 
+  a = FALSE
+}
+a
+
+for (i in 1:10){
+  print(i)
+}
+
+x <- c("a","b","c","d")
+for (i in 1:4){
+  print(x[i])
+}
+
+for (i in seq_along(x)){ # function seq_along will determine the length of vector itself and run the loop up to end of vector.
+  print (x[i])
+}
+
+
+for (letter in x){ # this transfer's x value to letter variable 1st then print function print it on console .
+  print (letter)
+}
+
+for (i in 1:4) print (x[i]) # as it is single line, so curly brackets are not required.
+
+
+## nested for loops
+
+x <- matrix (1:6, 2, 3)
+x
+
+for (i in seq_len(nrow(x))){
+  for (j in seq_len(ncol(x))){
+    print(x[i,j])
+  }
+}
+
+
+# while loop
+
+count <- 0
+while (count <10){ ## coundition should be meet in any case, else it would be infinite loop
+  print (count)
+  count <- count +1
+}
+
+
+z <- 5
+while(z>=3 && z <=10){
+  print(z)
+  coin <- rbinom(1,1,0.5)
+  if( coin == 1){
+    z<- z+1
+  } else {
+    z<- z-1
+  }
+}
+
+
+##functions
+
+x = rnorm(100)
+?sd ## help has come
+mydata<- x
+sd (x = mydata, na.rm=FALSE)
+sd (na.rm=FALSE,x = mydata )
+
+args (lm) ## to view description of lm function (linear model)
+
+mydata <- data.frame(x=rnorm(100),y=rnorm(100))
+lm(y ~ x,mydata,model = FALSE)
+lm(data=mydata,y~x, model = FALSE, 1:100) ## using arguments with and without name are possible without any sequence.
+
+
+f <- function(a, b=1, c=2, d=NULL){
+  print (a)
+  print(b)
+  print (c)
+  print(d)
+}
+f(b=45)
+
+f(4)
+f(a=4,b=3)
+
+## Coding standards for R
+# always use text/script file or text editor
+# indent your code
+# Limit the width of your code (80 columns)
+# Limit length of individual functions
+
+### Indenting
+# use 4 of indenting 
+
+
+
+### vectorized operations
+x<-1:4; y<- 6:9
+x
+y
+x+y
+
+x<-1:6; y<- 6:9 # vector of different length
+x/y ## warning has been generated
