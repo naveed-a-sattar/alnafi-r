@@ -360,3 +360,87 @@ x+y
 
 x<-1:6; y<- 6:9 # vector of different length
 x/y ## warning has been generated
+
+x <- matrix(1:4, 2 , 2); y<- matrix(rep(10,4),2,2)
+x*y # element wise multiplication
+
+x/y 
+
+x%*%y # true matrix multiplication
+
+
+
+
+#
+
+
+
+
+## Dates and Time in R
+# In R there are 2 separate classes to deal with time and date.
+# for class Date, the class name is "Date"
+# reference value in R for date calculation is 1970-01-01
+# reference value in R for time calculation is 1970-01-01
+
+as.Date("1970-01-01")
+as.POSIXct("1970-01-01")
+as.POSIXlt("1970-01-01")
+
+## ct only stores values as data frame, and no other information can be extracted.
+## lt is a list of underneath and it stores a bunch of other useful information like the day of the week, day of the year, month, day of the month.
+
+## some of the commonly used functions of lt funce are weekdays, months, quarters.
+
+
+x <- Sys.time()
+x
+
+p <- as.POSIXlt(x) ## this is L not I
+p
+
+class(x)
+names(unclass(p))
+p$sec
+p$month
+p&mon
+p$mon
+p$mday
+p$wday
+
+q <- as.POSIXct((x))
+q.sec
+q
+
+
+datestring <- c("January 10, 2012 10:40", "December 9, 2021 9:10")
+x <- strptime(datestring, "%B %d, %Y %H:%M ")
+x
+class(x)
+
+x<- as.Date("2012-01-01")
+y<- strptime("9 Jan 2011 11:34:21", "%d %b %Y %H:%M:%S")
+x-y
+
+class(x)
+class(y)
+x <- as.POSIXlt(x)
+class(x)
+x
+x-y
+## Time difference of 356.7261 days
+
+
+
+
+x<- as.Date("2012-01-01")
+y<- as.Date("2011-05-02")
+x-y ## Time difference of 244 days
+
+x <- as.POSIXct("2012-01-01 01:00:00")
+y <- as.POSIXct("2011-03-07 11:40:00" , tz = "GMT")
+x-y ##Time difference of 299.3472 days
+
+
+x <- as.POSIXct("2012-01-01 01:00:00")
+y <- as.POSIXct("2012-01-01 02:00:00" , tz = "GMT")
+x-y ##Time difference of 299.3472 days
