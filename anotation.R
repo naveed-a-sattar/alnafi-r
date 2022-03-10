@@ -444,3 +444,9 @@ x-y ##Time difference of 299.3472 days
 x <- as.POSIXct("2012-01-01 01:00:00")
 y <- as.POSIXct("2012-01-01 02:00:00" , tz = "GMT")
 x-y ##Time difference of 299.3472 days
+
+
+### Loops  and Loops functions, that would apply directly on data sets
+
+## lapply: l is list , it applies while loop over list and evaluate function on each element and output is also list
+## sapply: input is list, but output is more simplified
