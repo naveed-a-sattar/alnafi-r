@@ -450,3 +450,9 @@ x-y ##Time difference of 299.3472 days
 
 ## lapply: l is list , it applies while loop over list and evaluate function on each element and output is also list
 ## sapply: input is list, but output is more simplified
+## function apply only applies on specific column or row
+## tapply i subset to apply on sub-set of some data
+## mapply is multivariate version of lapply
+## split, auxxailiarty function used with lapply
+
+
