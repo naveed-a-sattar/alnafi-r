@@ -453,6 +453,16 @@ x-y ##Time difference of 299.3472 days
 ## function apply only applies on specific column or row
 ## tapply i subset to apply on sub-set of some data
 ## mapply is multivariate version of lapply
-## split, auxxailiarty function used with lapply
+## split, auxiliary function used with lapply
 
+## lapply takes 3 arguments
+##### 1. a list X
+##### 2. a function (or the name of a function) FUN;
+##### 3. other arguments via its .. argument.
 
+x <- list (a =1:5, b=rnorm(10))
+x
+
+lapply(x,mean)
+
+mean(x$a)
